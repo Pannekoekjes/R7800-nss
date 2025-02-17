@@ -561,7 +561,7 @@
  	return 0;
  
  out_remove_new_fa:
-@@ -1769,6 +1775,9 @@ int fib_table_delete(struct net *net, st
+@@ -1766,6 +1772,9 @@ int fib_table_delete(struct net *net, st
  	if (fa_to_delete->fa_state & FA_S_ACCESSED)
  		rt_cache_flush(cfg->fc_nlinfo.nl_net);
  
@@ -571,7 +571,7 @@
  	fib_release_info(fa_to_delete->fa_info);
  	alias_free_mem_rcu(fa_to_delete);
  	return 0;
-@@ -2401,6 +2410,20 @@ void __init fib_trie_init(void)
+@@ -2398,6 +2407,20 @@ void __init fib_trie_init(void)
  					   0, SLAB_PANIC | SLAB_ACCOUNT, NULL);
  }
  
@@ -622,7 +622,7 @@
  		   const struct in6_addr *daddr)
 --- a/net/ipv6/route.c
 +++ b/net/ipv6/route.c
-@@ -3879,6 +3879,9 @@ out_free:
+@@ -3867,6 +3867,9 @@ out_free:
  	return ERR_PTR(err);
  }
  
@@ -632,7 +632,7 @@
  int ip6_route_add(struct fib6_config *cfg, gfp_t gfp_flags,
  		  struct netlink_ext_ack *extack)
  {
-@@ -3890,6 +3893,10 @@ int ip6_route_add(struct fib6_config *cf
+@@ -3878,6 +3881,10 @@ int ip6_route_add(struct fib6_config *cf
  		return PTR_ERR(rt);
  
  	err = __ip6_ins_rt(rt, &cfg->fc_nlinfo, extack);
@@ -643,7 +643,7 @@
  	fib6_info_release(rt);
  
  	return err;
-@@ -3911,6 +3918,9 @@ static int __ip6_del_rt(struct fib6_info
+@@ -3899,6 +3906,9 @@ static int __ip6_del_rt(struct fib6_info
  	err = fib6_del(rt, info);
  	spin_unlock_bh(&table->tb6_lock);
  
@@ -653,7 +653,7 @@
  out:
  	fib6_info_release(rt);
  	return err;
-@@ -6350,6 +6360,20 @@ static int ip6_route_dev_notify(struct n
+@@ -6338,6 +6348,20 @@ static int ip6_route_dev_notify(struct n
  	return NOTIFY_OK;
  }
  

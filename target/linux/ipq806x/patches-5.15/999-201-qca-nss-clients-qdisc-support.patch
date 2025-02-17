@@ -333,7 +333,7 @@
  #endif
 --- a/net/sched/sch_api.c
 +++ b/net/sched/sch_api.c
-@@ -2351,4 +2351,26 @@ static int __init pktsched_init(void)
+@@ -2356,4 +2356,26 @@ static int __init pktsched_init(void)
  	return 0;
  }
  
@@ -430,7 +430,7 @@
  /* Reset all TX qdiscs greater than index of a device.  */
  static inline void qdisc_reset_all_tx_gt(struct net_device *dev, unsigned int i)
  {
-@@ -1342,4 +1377,9 @@ static inline void qdisc_synchronize(con
+@@ -1341,4 +1376,9 @@ static inline void qdisc_synchronize(con
  		msleep(1);
  }
  
