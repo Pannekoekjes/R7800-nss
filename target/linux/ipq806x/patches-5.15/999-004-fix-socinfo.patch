@@ -34,7 +34,7 @@
  	qs->attr.machine = socinfo_machine(&pdev->dev,
  					   le32_to_cpu(info->id));
  	qs->attr.soc_id = devm_kasprintf(&pdev->dev, GFP_KERNEL, "%u",
-@@ -623,6 +626,9 @@ static int qcom_socinfo_probe(struct pla
+@@ -629,6 +632,9 @@ static int qcom_socinfo_probe(struct pla
  	if (IS_ERR(qs->soc_dev))
  		return PTR_ERR(qs->soc_dev);
  

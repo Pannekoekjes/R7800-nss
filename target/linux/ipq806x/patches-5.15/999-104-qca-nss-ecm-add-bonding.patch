@@ -10,7 +10,7 @@
  static struct flow_dissector flow_keys_bonding __read_mostly;
  
  /*-------------------------- Forward declarations ---------------------------*/
-@@ -4107,6 +4110,23 @@ static int bond_get_lowest_level_rcu(str
+@@ -4108,6 +4111,23 @@ static int bond_get_lowest_level_rcu(str
  }
  #endif
  
@@ -34,7 +34,7 @@
  static void bond_get_stats(struct net_device *bond_dev,
  			   struct rtnl_link_stats64 *stats)
  {
-@@ -5439,6 +5459,10 @@ static void bond_destructor(struct net_d
+@@ -5440,6 +5460,10 @@ static void bond_destructor(struct net_d
  
  	if (bond->rr_tx_counter)
  		free_percpu(bond->rr_tx_counter);
@@ -45,7 +45,7 @@
  }
  
  void bond_setup(struct net_device *bond_dev)
-@@ -6012,7 +6036,14 @@ int bond_create(struct net *net, const c
+@@ -6013,7 +6037,14 @@ int bond_create(struct net *net, const c
  
  	bond_work_init_all(bond);
  
